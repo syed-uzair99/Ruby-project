@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  StockNo: 1
+  CategoryID: 1
+  CategoryName: MyString
+  ItemId: 1
+  ItemName: MyString
+  TotalStock: 1
+  SoldStock: 1
+  RemainingStock: 1
+
+two:
+  StockNo: 1
+  CategoryID: 1
+  CategoryName: MyString
+  ItemId: 1
+  ItemName: MyString
+  TotalStock: 1
+  SoldStock: 1
+  RemainingStock: 1

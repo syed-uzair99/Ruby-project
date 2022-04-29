@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ItemNo: 1
+  CategoryID: 1
+  CategoryName: MyString
+  ItemID: 1
+  ItemName: MyString
+  ItemPrice: 1.5
+
+two:
+  ItemNo: 1
+  CategoryID: 1
+  CategoryName: MyString
+  ItemID: 1
+  ItemName: MyString
+  ItemPrice: 1.5

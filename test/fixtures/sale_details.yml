@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  SaleNo: 1
+  CategoryID: 1
+  CategoryName: MyString
+  ItemId: 1
+  ItemName: MyString
+  TotalQuantity: MyString
+  ItemPrice: 9.99
+  TotalCost: 9.99
+  DateofSale: 2022-04-29 19:43:45
+  CustomerName: MyString
+  OrderID: 1
+
+two:
+  SaleNo: 1
+  CategoryID: 1
+  CategoryName: MyString
+  ItemId: 1
+  ItemName: MyString
+  TotalQuantity: MyString
+  ItemPrice: 9.99
+  TotalCost: 9.99
+  DateofSale: 2022-04-29 19:43:45
+  CustomerName: MyString
+  OrderID: 1
