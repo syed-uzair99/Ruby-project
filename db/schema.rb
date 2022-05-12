@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_063037) do
 
   create_table "item_lists", force: :cascade do |t|
     t.integer "ItemNo"
-    t.integer "CategoryID"
+    t.integer "itemCategory_id"
     t.string "CategoryName"
     t.integer "ItemID"
     t.string "ItemName"
@@ -77,4 +77,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_063037) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_lists", "item_categories", column: "itemCategory_id"
+  add_foreign_key "sale_details", "item_categories", column: "CategoryID"
+  add_foreign_key "sale_details", "item_lists", column: "ItemId"
+  add_foreign_key "stock_details", "item_categories", column: "CategoryID"
+  add_foreign_key "stock_details", "item_lists", column: "ItemId"
 end
