@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.bg {
+  background-image: url("https://media.wired.com/photos/60d27192a86e5ac15953a056/1:1/w_1458,h_1458,c_limit/Business-Amazon-Shopping-1279794636.jpg");
+  height:100%; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div class="bg">
+<center>
+<br> <br>
+<%= form_with url:app_new_path, method: :post do |f| %>
+    <%= f.select :id, @i.map {|c| [c.ItemName, c.id] } %>
+    <br> <br>
+    <%= f.label :TotalQuantity %>
+    <%= f.number_field :TotalQuantity %>
+    <%=f.submit "Enter" %>
+<% end %> 
+</div>
+</center>
+</body>
+</html>
+
+

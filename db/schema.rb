@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_06_063037) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_06_114451) do
   create_table "item_categories", force: :cascade do |t|
     t.integer "CategoryNo"
     t.integer "CategoryID"
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_063037) do
 
   create_table "item_lists", force: :cascade do |t|
     t.integer "ItemNo"
-    t.integer "CategoryID"
+    t.integer "itemCategory_id"
     t.string "CategoryName"
     t.integer "ItemID"
     t.string "ItemName"
@@ -30,21 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_063037) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sale_details", force: :cascade do |t|
-    t.integer "SaleNo"
-    t.integer "CategoryID"
-    t.string "CategoryName"
-    t.integer "ItemId"
-    t.string "ItemName"
-    t.string "TotalQuantity"
-    t.decimal "ItemPrice"
-    t.decimal "TotalCost"
-    t.datetime "DateofSale"
-    t.string "CustomerName"
-    t.integer "OrderID"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "sale_details" because of following StandardError
+#   Unknown type 'STRING' for column 'CustomerName'
 
   create_table "stock_details", force: :cascade do |t|
     t.integer "StockNo"
@@ -73,8 +60,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_063037) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_lists", "item_categories", column: "itemCategory_id"
+  add_foreign_key "sale_details", "item_categories", column: "CategoryID"
+  add_foreign_key "sale_details", "item_lists", column: "ItemId"
+  add_foreign_key "stock_details", "item_categories", column: "CategoryID"
+  add_foreign_key "stock_details", "item_lists", column: "ItemId"
 end

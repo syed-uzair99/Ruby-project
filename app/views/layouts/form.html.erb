@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.bg {
+  background-image: url("https://media.wired.com/photos/60d27192a86e5ac15953a056/1:1/w_1458,h_1458,c_limit/Business-Amazon-Shopping-1279794636.jpg");
+  height:100%; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 40px;
+}
+</style>
+</head>
+<body>
+<div class="bg">
+<center>Hello, <%= @c.name %><br> <br>
+<%= form_with url:app_create_path, method: :post do |f| %>
+    <%= f.select :id, @i.map {|c| [c.CategoryName, c.id] } %>
+    <%=f.submit "Enter" %>
+<% end %> 
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>
+<%= button_to "My Orders", pur_path, method: :get %>
+</center>
+</div>
+</body>
+</html>
+
+
